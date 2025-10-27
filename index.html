@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winston Wei</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #FAF7F0;
+            color: #3C3633;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 80px 40px 120px;
+        }
+
+        header {
+            margin-bottom: 80px;
+        }
+
+        h1 {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 42px;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: #2A2725;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #6B6662;
+            font-weight: 300;
+            letter-spacing: 0.01em;
+        }
+
+        .stream {
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
+        }
+
+        .entry {
+            border-bottom: 1px solid #E8E3DA;
+            padding-bottom: 64px;
+        }
+
+        .entry:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .entry-date {
+            font-size: 14px;
+            color: #8B857F;
+            margin-bottom: 16px;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .entry-title {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            margin-bottom: 20px;
+            color: #2A2725;
+        }
+
+        .entry-content {
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .entry-content p {
+            margin-bottom: 24px;
+        }
+
+        .entry-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: #B45309;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        a:hover {
+            border-bottom-color: #B45309;
+        }
+
+        .entry-meta {
+            font-size: 15px;
+            color: #8B857F;
+            font-style: italic;
+        }
+
+        .music-embed {
+            margin-top: 24px;
+            padding: 20px;
+            background-color: #F3EFE6;
+            border-radius: 4px;
+            font-size: 15px;
+            color: #6B6662;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 60px 24px 80px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .entry-title {
+                font-size: 24px;
+            }
+
+            .stream {
+                gap: 48px;
+            }
+
+            .entry {
+                padding-bottom: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Winston Wei</h1>
+            <p class="tagline">A digital nook for thoughts, music, and small discoveries.</p>
+        </header>
+
+        <main class="stream">
+            <article class="entry">
+                <div class="entry-date">October 26, 2025</div>
+                <h2 class="entry-title">On Building a Digital Nook</h2>
+                <div class="entry-content">
+                    <p>I wanted this site to feel like sitting by a window on a rainy day—warm light, natural materials, just enough space to think. No clutter, no noise. Just a place to collect the things that matter.</p>
+                    <p>The best websites feel like spaces, not pages. This is mine.</p>
+                </div>
+            </article>
+
+            <article class="entry">
+                <div class="entry-date">October 20, 2025</div>
+                <h2 class="entry-title">Currently Listening</h2>
+                <div class="entry-content">
+                    <p>There's something about <a href="#">Nils Frahm</a> that makes rainy afternoons feel intentional. His album <em>All Melody</em> has been on repeat lately—the way it moves between silence and sound feels like watching light change through a window.</p>
+                </div>
+                <div class="music-embed">
+                    <strong>Now Playing:</strong> Nils Frahm - All Melody (2018)
+                </div>
+            </article>
+
+            <article class="entry">
+                <div class="entry-date">October 15, 2025</div>
+                <h2 class="entry-title">A Good Meal</h2>
+                <div class="entry-content">
+                    <p>Made <em>cacio e pepe</em> tonight. Just pasta, black pepper, and pecorino. Three ingredients, but it took me years to get right. The trick isn't in adding more—it's in respecting what's already there.</p>
+                    <p>Good design works the same way.</p>
+                </div>
+            </article>
+
+            <article class="entry">
+                <div class="entry-date">October 8, 2025</div>
+                <h2 class="entry-title">Reading Notes</h2>
+                <div class="entry-content">
+                    <p>From <em>The Timeless Way of Building</em> by Christopher Alexander: "There is one timeless way of building. It is a thousand years old, and the same today as it has ever been."</p>
+                    <p>He's talking about architecture, but he might as well be talking about anything worth making. The principles don't change. Clarity, proportion, honesty. Whether you're building a house or a website.</p>
+                </div>
+            </article>
+        </main>
+    </div>
+</body>
+</html>
