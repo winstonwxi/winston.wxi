@@ -150,9 +150,125 @@
                 padding-bottom: 48px;
             }
         }
+
+        /* Landing Page Styles */
+        .landing {
+            height: 100vh;
+            width: 100%;
+            background-color: #FAF7F0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .landing-content {
+            width: 100%;
+            padding: 0 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .landing-question {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 42px;
+            font-weight: 500;
+            color: #2A2725;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.3s forwards;
+        }
+
+        .question-mark {
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-block;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+        }
+
+        .question-mark:hover {
+            border-bottom-color: #2A2725;
+        }
+
+        .landing-answer {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 42px;
+            font-weight: 500;
+            font-style: italic;
+            color: #2A2725;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s ease-out, visibility 0s;
+        }
+
+        .landing-answer.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .landing-arrow {
+            position: absolute;
+            bottom: 60px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 36px;
+            color: #2A2725;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease-out, visibility 0s, transform 0.2s ease;
+        }
+
+        .landing-arrow.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .landing-arrow:hover {
+            transform: translateY(4px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .landing-content {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 40px;
+                padding: 0 24px;
+            }
+
+            .landing-question,
+            .landing-answer {
+                font-size: 28px;
+            }
+
+            .landing-answer {
+                align-self: flex-end;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Landing Page -->
+    <div class="landing">
+        <div class="landing-content">
+            <div class="landing-question">how does a tree fall<span class="question-mark">?</span></div>
+            <div class="landing-answer">the way it leans</div>
+        </div>
+        <div class="landing-arrow">&#8595;</div>
+    </div>
+
     <div class="container">
         <header>
             <h1>Winston Wei</h1>
@@ -227,5 +343,31 @@
             </article>
         </main>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const questionMark = document.querySelector('.question-mark');
+            const answer = document.querySelector('.landing-answer');
+            const arrow = document.querySelector('.landing-arrow');
+
+            // Disable scrolling initially
+            document.body.style.overflow = 'hidden';
+
+            questionMark.addEventListener('click', function() {
+                answer.classList.add('visible');
+                setTimeout(function() {
+                    arrow.classList.add('visible');
+                    // Enable scrolling after answer is revealed
+                    document.body.style.overflow = '';
+                }, 800);
+            });
+
+            arrow.addEventListener('click', function() {
+                document.querySelector('.container').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
